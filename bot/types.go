@@ -45,28 +45,17 @@ type MessageEntity struct {
 }
 
 type NewMessage struct {
-	ChatID      int64                 `json:"chat_id"`
-	Text        string                `json:"text"`
-	ReplyMarkup *InlineKeyboardMarkup `json:"reply_markup,omitempty"`
+	ChatID int64  `json:"chat_id"`
+	Text   string `json:"text"`
 }
 
 type EditMessageReplyMarkup struct {
-	ChatID      int64                 `json:"chat_id"`
-	MessageID   int64                 `json:"message_id"`
-	ReplyMarkup *InlineKeyboardMarkup `json:"reply_markup,omitempty"`
+	ChatID    int64 `json:"chat_id"`
+	MessageID int64 `json:"message_id"`
 }
 
 type AnswerCallbackQuery struct {
 	CallbackQueryID string `json:"callback_query_id"`
 	Text            string `json:"text"`
 	ShowAlert       bool   `json:"show_alert"`
-}
-
-type InlineKeyboardMarkup struct {
-	InlineKeyboard [][]InlineKeyboardButton `json:"inline_keyboard"`
-}
-
-type InlineKeyboardButton struct {
-	Text         string  `json:"text"`
-	CallbackData *string `json:"callback_data,omitempty"`
 }
